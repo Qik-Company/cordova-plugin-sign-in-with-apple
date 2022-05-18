@@ -50,6 +50,10 @@
     if (options[@"requestedScopes"]) {
         request.requestedScopes = [self convertScopes:options[@"requestedScopes"]];
     }
+      
+    if (options[@"state"]) {
+        request.state = [options objectForKey:@"state"];
+    }
 
     ASAuthorizationController *controller = [[ASAuthorizationController alloc]
         initWithAuthorizationRequests:@[ request ]];
